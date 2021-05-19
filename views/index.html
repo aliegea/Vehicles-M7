@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cars</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+<script src="../models/car.js"></script>
+<script src="../models/wheel.js"></script>
+<script src="../controllers/controller.js"></script>
+
+</head>
+<body>
+<div class="container" id="mainContainer">
+     <form class="formulario" id="form">
+         <!-- principi del primer formulari -->
+         <div class="customerInputs">
+            <Label for="plate">Introduce la matrícula</Label>
+            <input type="text" class="validateInput" name="plate" id="plate" placeholder="1234ABC">
+            <small id="errorPlate">Escribe 4 números seguidos de 3 letras</small>
+    
+            <Label for="marca">Selecciona la marca</Label>
+            <select name="marca" id="brand">
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Aston Martin">Aston Martin</option>
+                <option value="Audi">Audi</option>
+                
+                <option value="Autovaz">Autovaz</option>
+                <option value="Bentley">Bentley</option>
+                <option value="Bmw">Bmw</option>
+                <option value="Cadillac">Cadillac</option>
+                
+                <option value="Caterham">Caterham</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Chrysler">Chrysler</option>
+                <option value="Citroen">Citroen</option>
+                
+                <option value="Daihatsu">Daihatsu</option>
+                <option value="Dodge">Dodge</option>
+                <option value="Ferrari">Ferrari</option>
+                <option value="Fiat">Fiat</option>
+                
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hummer">Hummer</option>
+                <option value="Hyundai">Hyundai</option>
+                
+                <option value="Isuzu">Isuzu</option>
+                <option value="Jaguar">Jaguar</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Kia">Kia</option>
+                
+                <option value="Lamborghini">Lamborghini</option>
+                <option value="Lancia">Lancia</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Lexus">Lexus</option>
+                
+                <option value="Lotus">Lotus</option>
+                <option value="Maserati">Maserati</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Mercedes Benz">Mercedes Benz</option>
+                
+                <option value="MG">MG</option>
+                <option value="Mini">Mini</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Morgan">Morgan</option>
+                
+                <option value="Nissan">Nissan</option>
+                <option value="Opel">Opel</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Porsche">Porsche</option>
+                
+                <option value="Renault">Renault</option>
+                <option value="Rolls Royce">Rolls Royce</option>
+                <option value="Rover">Rover</option>
+                <option value="Saab">Saab</option>
+                
+                <option value="Seat">Seat</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Smart">Smart</option>
+                <option value="Ssangyong">Ssangyong</option>
+                
+                <option value="Subaru">Subaru</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Tata">Tata</option>
+                <option value="Toyota">Toyota</option>
+                
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Volvo">Volvo</option>
+            </select>
+    
+            <Label for="carColor">Selecciona un color</Label>
+            <select name="carColor" id="carColor">
+                <option value="blanco">Blanco</option>
+                <option value="amarillo" >Amarillo</option>
+                <option value="naranja">Naranja</option>
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="gris">Gris</option>
+                <option value="negro">Negro</option>
+            </select>
+
+            <button class="submit" onclick="createCar()" type="button" id="addCarBtn">CREAR COCHE</button>
+        
+        </div>
+    </form>
+        <!-- fi del primer formulari-->
+
+ <div class="hidden" id="hidden">
+    <div class="tittlewheels">
+            <p>Introduce el diámetro y la marca de cada rueda</p>
+     </div>
+        <form class="formulario2 "id="wheelsForm">
+          <div class="wheel">
+           <label for="brandwheel1">Marca Rueda 1</label>
+           <select name="marca" name="brandwheel1" id="brandwheel1" class="wheelBrand">
+                <option value="Bridgestone">Bridgestone</option>
+                <option value="Goodyear">Goodyear</option>
+                <option value="Dunlop<">Dunlop</option>
+                <option value="Continental">Pirelli</option>
+                <option value="Michellin">Michelin</option>
+                <option value="Firestone">Firestone</option>
+                <option value="Nokian">Nokian</option>
+                <option value="Yokohama">Yokohama</option>
+           </select>
+           
+          <label for="dmtwheel1">Diámetro Rueda 1 (Metros)</label>
+            <input type="text" name="dmtwheel1 " class="wheelDmt validateInput" id="dmtwheel1"placeholder="Número entre 0.4 y 2 metros" > 
+            <small id="errorDmt1">Por favor escribe un número entre 0.4 y 2</small>
+          </div> 
+          <div class="wheel"> 
+            <label for="brandwheel2">Marca Rueda 2</label>
+            <select name="marca" name="brandwheel2" id="brandwheel2" class="wheelBrand">
+                <option value="Bridgestone">Bridgestone</option>
+                <option value="Goodyear">Goodyear</option>
+                <option value="Dunlop<">Dunlop</option>
+                <option value="Continental">Pirelli</option>
+                <option value="Michellin">Michelin</option>
+                <option value="Firestone">Firestone</option>
+                <option value="Nokian">Nokian</option>
+                <option value="Yokohama">Yokohama</option>
+               </select>
+               
+            <label for="dmtwheel2">Diámetro Rueda 2 (Metros)</label>
+                <input type="text" name="dmtwheel2"  class="wheelDmt validateInput" id="dmtwheel2"placeholder="Número entre 0.4 y 2 metros" > 
+                <small id="errorDmt2"></small>
+          </div>
+
+          <div class="wheel">
+           <label for="brandwheel3">Marca Rueda 3</label>
+           <select name="marca" name="brandwheel3" id="brandwheel3" class="wheelBrand">
+                <option value="Bridgestone">Bridgestone</option>
+                <option value="Goodyear">Goodyear</option>
+                <option value="Dunlop<">Dunlop</option>
+                <option value="Continental">Pirelli</option>
+                <option value="Michellin">Michelin</option>
+                <option value="Firestone">Firestone</option>
+                <option value="Nokian">Nokian</option>
+                <option value="Yokohama">Yokohama</option>
+           </select>
+
+            <label for="dmtwheel3">Diámetro Rueda 3 (Metros)</label>
+                <input type="text" name="dmtwheel3"  class="wheelDmt validateInput" id="dmtwheel3"placeholder="Número entre 0.4 y 2 metros" > 
+                <small id="errorDmt3"></small>
+         </div> 
+            
+          <div class="wheel">   
+            <label for="brandwheel4">Marca Rueda 4 (Metros)</label>
+            <select name="marca" name="brandwheel4" id="brandwheel4" class="wheelBrand">
+                 <option value="Bridgestone">Bridgestone</option>
+                <option value="Goodyear">Goodyear</option>
+                <option value="Dunlop<">Dunlop</option>
+                <option value="Continental">Pirelli</option>
+                <option value="Michellin">Michelin</option>
+                <option value="Firestone">Firestone</option>
+                <option value="Nokian">Nokian</option>
+                <option value="Yokohama">Yokohama</option>
+             </select>
+               
+            <label for="dmtwheel4">Diámetro Rueda 4 </label>
+                <input type="text" name="dmtwheel4"  class="wheelDmt validateInput" id="dmtwheel4"placeholder="Número entre 0.4 y 2 metros" > 
+                <small id="errorDmt4"></small>
+           </div>
+        </form> 
+        <button class="submit" onclick="addWheels()" type="button" id="addCarBtn">AÑADIR RUEDAS</button>
+    </div>
+   <!-- Fin div hidden -->
+ <!-- display info cotxe -->
+    <div class="carCard">
+        <p class="tittleMain">Datos del Coche</p>
+            <div class="carFeaturesinfo">
+                <p class="info">Matrícula: <br>
+                    <span id="carPlateInfo">1234jhg</span>
+                </p>
+                <p class="info">Marca:  <br>
+                    <span id="carBrandInfo">Alfa</span>
+                </p>
+                <p class="info">Color: <br>
+                     <span id="carColorInfo">blanco</span>
+                </p>
+            </div>
+            <div class="carFeatures" id="wheelsInfo">
+                <div class="wheels grids" id=wheelInfo0>
+                     <p class="tittleW">Rueda 1</p>
+                    <div>
+                        <p>Marca: <span id="wheelBrand1" class="displayInfo"></span> </p>
+                        <p>Diámetro:<span id="wheelDmt1" class="displayInfo"></span> </p>
+                    </div>
+                </div>
+                <div class="wheels grids" id=wheelInfo1>
+                    <p class="tittleW">Rueda 2</p>
+                    <div>
+                        <p>Marca: <span id="wheelBrand2" class="displayInfo"></span> </p>
+                        <p>Diámetro: <span id="wheelDmt2" class="displayInfo"></span> </p>
+                    </div>
+                </div>
+                <div class="wheels grids" id=wheelInfo2>
+                    <p class="tittleW">Rueda 3</p>
+                    <div>
+                        <p>Marca: <span id="wheelBrand3" class="displayInfo"></span> </p>
+                        <p>Diámetro:<span id="wheelDmt3" class="displayInfo">hola</span> </p>
+                    </div>
+                </div>
+                <div class="wheels grids" id=wheelInfo3>
+                    <p class="tittleW">Rueda 4</p>
+                    <div>
+                        <p>Marca: <span id="wheelBrand4" class="displayInfo"></span> </p>
+                        <p>Diámetro:<span id="wheelDmt4" class="displayInfo"></span> </p>
+                    </div>
+                 </div>
+            </div>
+            <!-- cierre car features -->
+    </div>
+        <!-- cierre car card --> 
+</div>
+<!-- cierre main--> 
+ <div class="hidden2" id="hidden2">
+       
+    <p class="text">Tu coche se ha creado correctamente<i class="fas fa-check-circle check"></i></p>
+    <p class="text">¿Deseas guardar los cambios?</p>
+    <button class="save" onclick="saveCars()" type="button" id="saveCarBtn">GUARDAR COCHE</button>
+    
+</div>
+</body>
+

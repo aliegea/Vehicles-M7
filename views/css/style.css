@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: rgb(155,158,158);
+    background: linear-gradient(0deg, rgba(155,158,158,1) 35%, rgba(245,242,236,1) 100%);
+    font-family: Arial, Helvetica, sans-serif; 
+    min-height: 100vw;
+}
+.container{
+    display: flex;
+    flex-flow: row wrap;
+    width:80vw;
+    margin: 3% auto;
+    background-color: #323734;
+    border-radius: 20px;
+}
+.formulario{  
+    align-items: center;
+    padding:2em;
+    padding-right: 0;
+    border-radius:10px;
+    flex-grow: 2;
+    margin-right: -1em;
+}
+.carCard{
+    display:flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-content: center;
+    margin:2em;
+    margin-left: 2em;
+    border-radius: 10px;
+    background-color:white;
+    -webkit-box-shadow: 3px 10px 6px -6px #9a9494; 
+    box-shadow: 3px 10px 6px -6px #9a9494;  
+}
+.carFeaturesinfo{
+    color:#292626;
+    padding:0px 1em;
+    margin:1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color:white;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 0px 5px #dfdada, inset 0px 10px 27px -8px #323734, inset 0px -10px 27px -8px #dfdada, -5px -5px 12px 10px rgba(50, 55, 52, 0);  
+    box-shadow: 0px 0px 0px 5px #dfdada, inset 0px 10px 27px -8px #323734, inset 0px -10px 27px -8px #dfdada, -5px -5px 12px 10px rgba(50, 55, 52, 0);
+    border-radius: 20px;
+}
+.info{
+    font-weight: bold;
+    margin-top: 20px; 
+ 
+}
+.tittle{
+    font-weight: bold;
+    text-align: center;
+    padding:5px;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 12px 29px -6px #333333; 
+    box-shadow: 3px 12px 29px -6px #333333;
+}
+.tittleW{
+    font-weight: bold;
+    text-align: center;
+    
+}
+.tittleMain{
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    padding:10px ;
+    background-color: #867f7f;
+    color: white; 
+    margin-bottom: -10px;   
+}
+.carFeatures{
+    flex:1;
+    color:#292626;
+    padding:5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+   
+}
+.formulario2 {
+    align-items: center;
+    padding:2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 15px;
+    flex-grow: 2;
+    text-align: center;
+
+}
+
+.displayInfo{
+    margin-left: 1em;
+    font-weight: bold;
+    color:rgba(96, 86, 86, 0.8);
+}
+.customerInputs{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width:90%;
+    margin-right: 2em;
+    color:#292626;   
+}
+input, select{
+    width:100%;
+    background-color: rgba(255, 255, 255,0.8);
+    color: #292626;
+    border-radius: 20px;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    padding: 1em;
+    border-style: hidden;
+    
+}
+input:focus, select:focus{
+    outline: none;
+}
+
+.hidden{
+    text-align: center;
+    border-radius: 20px;
+    display:none;
+    
+}
+.visible{
+    display:block;
+    animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+.tittlewheels{
+    color:white;
+    font-size: larger;
+    text-transform: uppercase;
+    
+}
+.submit{
+    background: #1e6358;
+    color:white;
+    border:0;
+    border-radius: 10px;
+    padding: 20px 60px;
+    font-size: 16px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 60%;
+    align-self: center;
+}
+.save{
+    background: #0e8370;
+    color:white;
+    border:0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 30%;
+    display: inline;
+    text-align: center;
+}
+label{
+    color:rgb(235, 228, 228);
+    text-transform: uppercase;     
+}
+.formulario2 label{
+    text-transform: none;
+}
+span{
+    color:rgba(96, 86, 86, 0.8);
+}
+.grids{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+   
+}
+
+
+.validateInput{
+    margin-bottom: 0.25em;
+}
+.validateInputError{
+    border:1px dashed tomato;
+   
+    
+}
+.hidden2{
+    color:#43855d;;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    display: none;
+    margin-bottom: -1em;
+    margin-top: 2em;
+}
+
+.check{
+    font-size: larger;
+    margin-left: 1em;
+}
+small{
+    color:tomato;
+    visibility: hidden;
+    align-self: center;
+    margin-bottom: 1em;
+   
+}
+
+@media screen and (max-width: 1200px)  {
+    .submit{    
+        min-width: 70%;
+    }}
+ @media screen and (max-width: 940px)  {
+    .submit{     
+        min-width: 90%;
+     }}
+@media screen and (max-width: 1200px)  {
+    .carCard { 
+        margin: auto;
+     }}
+ @media screen and (max-width: 940px)  {
+        .grids{     
+            grid-template-columns: repeat(1, 1fr);
+         }}
