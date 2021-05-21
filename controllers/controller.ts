@@ -73,42 +73,51 @@ function addWheels(brand:string[], diameter:number[]) {
   var brands:string[] = new Array;
   var dmts:number[] = new Array;
   var dataCount:number = 0;
+
   for (let i = 0; i < 4; i++)
     {
-        const wheelNumber=i+1;
-        var wheelCustBrand=((<HTMLInputElement>document.getElementById("brandwheel"+wheelNumber)).value);
+        var wheelNumber=i+1;
+        let wheelCustBrand=((<HTMLInputElement>document.getElementById("brandwheel"+wheelNumber)).value);
         brands.push(wheelCustBrand)
          dataCount++   
-    }
+         
+    
+}
 for (let i = 0; i < 4; i++){   
-        const wheelNumber=(i+1);
-        var wheelcustDmt=parseFloat(((<HTMLInputElement>document.getElementById("dmtwheel"+wheelNumber)).value));
-        dmts.push(wheelcustDmt);
-       
-    if (dmts[i]>=0.4 && dmts[i]<=2){
-         dataCount++
-    }
+    var wheelNumber=i+1;
+    let wheelcustDmt:number=parseFloat(((<HTMLInputElement>document.getElementById("dmtwheel"+wheelNumber)).value));
+    dmts.push(wheelcustDmt);
+    
+   if (dmts[i]>=0.4 && dmts[i]<=2){
+ 
+  dataCount++
+}
     else{
-        ((<HTMLInputElement>document.getElementById("dmtwheel"+wheelNumber)).value)=""
-   
-        const error=<HTMLElement>document.getElementById("errorDmt"+wheelNumber)
+        ((<HTMLInputElement>document.getElementById("dmtwheel"+(i+1))).value)=""
+        const error=<HTMLElement>document.getElementById("errorDmt"+(i+1))
         error.style.visibility="visible";
         error.textContent=("El diámetro de la rueda "+(i+1)+" no es correcto")
         var dmtEl=<HTMLInputElement>document.getElementById("dmtwheel"+wheelNumber);
         dmtEl.classList.add("validateInputError");
 
     }
+}
 
     if (dataCount===8)
     {
+       
     success() 
     }
+else{
+    return false;
 
 }
 
-for (var i = 0; i < 4; i++)
+
+for (var i = 0; i < 4; i++){
 car.addWheel((new Wheel(dmts[i],brands[i])))
 console.log(car)
+}
 
 for (var i = 0; i < 4; i++) {
     const wheelNumber=i+1;
@@ -120,6 +129,6 @@ for (var i = 0; i < 4; i++) {
     var brandDisplay:any = document.getElementById("wheelBrand"+wheelNumber);
     brandDisplay.textContent=car.wheels[i]["brand"];
   }
-  
+  return car
 }
 
